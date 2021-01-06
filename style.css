@@ -1,0 +1,483 @@
+/**** GÉNÉRAL ****/
+body
+{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 0;
+    max-width: 1400px;
+    margin: auto;
+}
+
+h2
+{
+    font-weight: 900;
+}
+
+h3
+{
+    font-weight: 100;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+/* style des boutons colorés */
+.accroche a, .section_menu a
+{
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+    border-radius: 50px 50px 50px 50px;
+    color: white;
+    border: none;
+    background-image: linear-gradient(#FF79DA,#9356DC);
+    text-align: center;
+}
+
+/**** ENTÊTE DE PAGE ****/
+header
+{
+    display: flex;
+    align-items: center;
+}
+
+header .logo
+{
+    display: block;
+    margin: auto;
+    width: 50%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.header_menu
+{
+    position: relative;
+    right: 40px;
+}
+
+.fa-arrow-left
+{
+    text-decoration: none;
+    color: black;
+    display: block;
+    align-items: center;
+    margin-left: 50px;
+}
+
+/**** CORPS DE LA PAGE D'ACCUEIL ****/
+/* bloc localisation*/
+.location
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eaeaea;
+    height: 40px;
+    box-shadow: inset 0px 1px 1px 0px rgb(172, 172, 172);
+}
+
+/* bloc phrase d'accroche */
+.accroche
+{
+    background-color: #f6f6f6;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.accroche h2
+{
+    margin-top: 0;
+    padding-top: 4%;
+}
+
+/* bloc fonctionnement */
+.fonctionnement
+{
+    width: 90%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.fonctionnement ul
+{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.number
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 100px 100px 100px 100px;
+    background-color: #9356DC;
+    text-align: center;
+    color: white;
+    position: relative;
+    right: 15px;
+}
+
+.list_fonctionnement li
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 60px;
+    width: 25%;
+    background-color: #f6f6f6;
+    border-radius: 20px 20px 20px 20px;
+    font-weight: 600;
+    box-shadow: 2px 2px 8px #c9c9c9;
+}
+
+#list_3
+{
+    background-color: #f5edff;
+}
+#icone_3
+{
+    color: #9356DC;
+}
+
+/* Section restaurants */
+.container_restaurants
+{
+    background-color: #f6f6f6;
+    padding-bottom: 30px;
+    margin-top: 5%;
+    padding-top: 2px;
+}
+
+.container_restaurants h2
+{
+    margin-left: 5%;
+}
+
+.restaurants
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.restaurant
+{
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    height: 180px;
+    box-shadow: 2px 2px 8px #c9c9c9;
+    transition: all 0.2s linear 0s;
+}
+
+.restaurant:hover
+{
+    box-shadow: 4px 4px 12px #8f8f8f;
+}
+
+.restaurant img
+{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.restaurant h4
+{
+    margin: 0;
+    color: black;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.restaurant p
+{
+    margin: 0;
+    color: black;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.restaurant .far.fa-heart
+{
+    color: black;
+    position: relative;
+    left: 85%;
+    bottom: 20%;
+    opacity: 1;
+}
+.restaurant .fas.fa-heart
+{
+    color: black;
+    width: 16px;
+    position: relative;
+    left: 85%;
+    bottom: 55px;
+    opacity: 0;
+    z-index: 10;
+}
+
+.restaurant .fa-heart:hover
+{
+    background: linear-gradient(#9356DC,#FF79DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.restaurant .fas.fa-heart:hover
+{
+    width: auto;
+    opacity: 1;
+    z-index: 0;
+}
+.restaurant .far.fa-heart:hover
+{
+    opacity: 0;
+}
+
+.container {
+    display: inline-block;
+    position: relative;
+}
+.container .text {
+    background-color: #99E2D0;
+    border-radius: 3px 3px 3px 3px;
+    z-index: 1;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 80px;
+    height: 30px;
+    vertical-align:middle;
+    line-height: 30px;
+    position: absolute;
+    top: 8%;
+    left: 55%;
+    text-align: center;
+    color: #008766;
+}
+
+/**** CORPS DES MENUS ****/
+.menu_img
+{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section_menu
+{
+    border-radius: 30px 30px 0 0;
+    background-color: #f6f6f6;
+}
+
+.menu_container
+{
+    background-color: #f6f6f6;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    bottom: 50px;
+}
+
+.menu_container_in
+{
+    width: 90%;
+    margin: auto;
+    height: 100%;
+}
+
+.menu_container h1
+{
+    font-family: Shrikhand, Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    margin-bottom: 0;
+}
+
+.menu_container .far
+{
+    position: relative;
+    bottom: 25px;
+    left: 90%;
+}
+
+.menu_container h5
+{
+    font-weight: 100;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.underline
+{
+    background-color: #99E2D0;
+    width: 40px;
+    height: 3px;
+}
+
+.menu
+{
+    height: 50px;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    padding-left: 10px;
+    box-shadow: 2px 2px 8px #c9c9c9;
+}
+
+.menu_last
+{
+    margin-bottom: 40px;
+}
+
+.menu h4
+{
+    position: relative;
+    top: 5px;
+}
+
+.menu p
+{
+    position: relative;
+    bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.menu span
+{
+    width: 96%;
+    text-align: right;
+    display: block;
+    position: relative;
+    bottom: 45px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.menu i
+{
+    width: 100%;
+    height: 100%;
+    padding-left: 33px;
+    text-align: right;
+    vertical-align:middle;
+    line-height: 50px;
+    position: relative;
+    bottom: 92px;
+    font-size: 1.3rem;
+    color: white;
+    opacity: 0;
+    transition: 100ms 10ms;
+}
+
+.menu {
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+      0 5px 15px 0 rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    
+    border-right: 0 solid #99E2D0;
+    transition: border-right 300ms ease-in-out, padding-left 300ms ease-in-out;
+  }
+  
+  .menu:hover {
+    border-right: 3rem solid #99E2D0;
+  }
+  .menu i:hover
+  {
+      opacity: 1;
+  }
+
+/**** PIED DE PAGE ****/
+footer
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    color: white;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+.logo_text
+{
+    font-family: Shrikhand, Arial;
+    font-size: 1.2rem;
+}
+
+footer span
+{
+    font-weight: 600;
+    position: relative;
+
+}
+
+footer div
+{
+    margin-top: 1em;
+}
+
+.fas span
+{
+    font-family: Boroto, Arial;
+}
+
+.fas
+{
+    width: 30px;
+}
+
+footer a
+{
+    color: white;
+}
+
+/* AFFICHAGE TABLETTES ET SMARTPHONES */
+@media screen and (max-width: 815px) {
+    .list_fonctionnement
+    {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .list_fonctionnement li
+    {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .restaurants
+    {
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+    }
+    .restaurant
+    {
+        margin-bottom: 20px;
+    }
+    .restaurant img
+    {
+        width: 100%;
+    }
+    .container .text {
+        left: 75%;
+    }
+    .menu h4
+    {
+        font-size: 0.9rem;
+    }
+    .menu p
+    {
+        font-size: 0.8rem;
+        bottom: 10px;
+    }
+    .menu span
+    {
+        font-size: 0.8rem;
+        bottom: 38px;
+    }
+}
