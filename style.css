@@ -38,6 +38,97 @@ a
     text-align: center;
 }
 
+.accroche a:hover, .section_menu a:hover
+{
+    background-image: linear-gradient(#ff93e0,#9e6ddb);
+    box-shadow: 2px 2px 8px #6e6e6e;
+}
+
+/**** PAGE DE CHARGEMENT ****/
+.spinner 
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 15;
+    right: 0;
+    animation: spinner-hidden 0s ease-in 1s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner__content p
+{
+    font-family: Shrikhand, Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;
+    padding-bottom: 300px;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(left, #9356DC, #FF79DA, #99E2D0);
+}
+
+.loader 
+{
+    animation: spin 1s infinite linear;
+    border: solid 2vmin transparent;
+    border-radius: 50%;
+    border-right-color: #9356DC;
+    border-top-color: #9356DC;
+    box-sizing: border-box;
+    height: 20vmin;
+    left: calc(50% - 10vmin);
+    position: fixed;
+    top: calc(50% - 10vmin);
+    width: 20vmin;
+    z-index: 1;
+}
+
+.loader:before {
+    animation: spin 2s linear infinite;
+    border: solid 2vmin transparent;
+    border-radius: 50%;
+    border-right-color: #FF79DA;
+    border-top-color: #FF79DA;
+    box-sizing: border-box;
+    content: "";
+    height: 16vmin;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 16vmin;
+}
+
+.loader:after 
+{
+    animation: spin 3s infinite linear;
+    border: solid 2vmin transparent;
+    border-radius: 50%;
+    border-right-color: #99E2D0;
+    border-top-color: #99E2D0;
+    box-sizing: border-box;
+    content: "";
+    height: 12vmin;
+    left: 2vmin;
+    position: absolute;
+    top: 2vmin;
+    width: 12vmin;
+}
+
+@keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner-hidden {
+    to {
+      visibility: hidden;
+    }
+}
+
 /**** ENTÊTE DE PAGE ****/
 header
 {
@@ -135,11 +226,11 @@ header .logo
     box-shadow: 2px 2px 8px #c9c9c9;
 }
 
-#list_3
+.list_fonctionnement li:hover
 {
     background-color: #f5edff;
 }
-#icone_3
+.list_fonctionnement li:hover i
 {
     color: #9356DC;
 }
@@ -326,6 +417,7 @@ header .logo
     border-radius: 15px 15px 15px 15px;
     padding-left: 10px;
     box-shadow: 2px 2px 8px #c9c9c9;
+    white-space: nowrap;
 }
 
 .menu_last
@@ -337,6 +429,9 @@ header .logo
 {
     position: relative;
     top: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
 }
 
 .menu p
@@ -344,6 +439,9 @@ header .logo
     position: relative;
     bottom: 12px;
     font-size: 0.9rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
 }
 
 .menu span
@@ -378,17 +476,103 @@ header .logo
       0 5px 15px 0 rgba(0,0,0,0.08);
     background-color: #ffffff;
     border-radius: 0.5rem;
-    
-    border-right: 0 solid #99E2D0;
-    transition: border-right 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+  
+ @keyframes menu_appear
+ {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+ }
+
+ .menu_entrees, .menu_plats, .menu_desserts {
+    animation-duration: 4s;
+    animation-name: fadein;
+    animation-fill-mode: backwards;
+  }
+  .menu_entrees {
+    margin-top: 40px;
   }
   
-  .menu:hover {
+  .menu_plats {
+    margin-top: 40px;
+    animation-delay: 1s;
+  }
+  
+  .menu_desserts {
+    margin-top: 40px;
+    animation-delay: 2s;
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  /*.menu:hover {
     border-right: 3rem solid #99E2D0;
   }
   .menu i:hover
   {
       opacity: 1;
+  }*/
+
+/*.menu_confirmation
+{
+    background-color: #99e2d0;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+}
+.menu_confirmation:hover .menu_icon
+{
+    margin-right: -1rem;
+}*/
+
+.menu_confirmation
+{
+    width: 0;
+    height: 100%;
+    margin-left: 10px;
+    background-color: #99E2D0;
+    transition: width 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: white;
+    overflow: hidden;
+}
+
+.menu:hover .menu_icon {
+    width: 50px;
+  }
+.menu:hover .menu_icon i {
+    animation: rotate 2s;
+  }
+}
+
+@keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+    0% {
+      transform: rotate(190deg);
+    }
   }
 
 /**** PIED DE PAGE ****/
@@ -479,5 +663,13 @@ footer a
     {
         font-size: 0.8rem;
         bottom: 38px;
+    }
+}
+
+/* AFFICHAGE TRES PETITES RESOLUTIONS */
+@media screen and (max-width: 425px) {
+    .container .text
+    {
+        left: 65%;
     }
 }
