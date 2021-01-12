@@ -12,11 +12,6 @@ h2
     font-weight: 900;
 }
 
-h3
-{
-    font-weight: 100;
-}
-
 a
 {
     text-decoration: none;
@@ -281,6 +276,7 @@ header .logo
 
 .restaurant h4
 {
+    font-size: 1.1rem;
     margin: 0;
     color: black;
     padding-left: 10px;
@@ -296,7 +292,7 @@ header .logo
 }
 .restaurant .far.fa-heart
 {
-    color: black;
+    color: rgba(184, 184, 184, 0.726);
     position: relative;
     left: 85%;
     bottom: 20%;
@@ -311,6 +307,7 @@ header .logo
     bottom: 55px;
     opacity: 0;
     z-index: 10;
+    transition-duration: 0.5s;
 }
 
 .restaurant .fa-heart:hover
@@ -408,16 +405,23 @@ header .logo
     background-color: #99E2D0;
     width: 40px;
     height: 3px;
+    margin-bottom: 20px;
 }
 
 .menu
 {
-    height: 50px;
+    display: flex;
+    height: auto;
     background-color: white;
     border-radius: 15px 15px 15px 15px;
     padding-left: 10px;
     box-shadow: 2px 2px 8px #c9c9c9;
     white-space: nowrap;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+      0 5px 15px 0 rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    margin-top: 20px;
 }
 
 .menu_last
@@ -432,6 +436,7 @@ header .logo
     text-overflow: ellipsis;
     overflow: hidden;
     width: 80%;
+    margin-top: 0;
 }
 
 .menu p
@@ -442,15 +447,16 @@ header .logo
     text-overflow: ellipsis;
     overflow: hidden;
     width: 80%;
+    margin-bottom: 0;
 }
 
-.menu span
+.menu_confirmation span
 {
     width: 96%;
     text-align: right;
     display: block;
     position: relative;
-    bottom: 45px;
+    bottom: 60px;
     font-size: 0.9rem;
     font-weight: bold;
 }
@@ -471,15 +477,13 @@ header .logo
     transition: 100ms 10ms;
 }
 
-.menu {
-    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
-      0 5px 15px 0 rgba(0,0,0,0.08);
-    background-color: #ffffff;
-    border-radius: 0.5rem;
+.menu_appelations
+{
+    width: 80%;
 }
   
- @keyframes menu_appear
- {
+@keyframes menu_appear
+{
     0% {
         transform: translateY(50px);
         opacity: 0;
@@ -491,64 +495,86 @@ header .logo
         transform: translateY(0px);
         opacity: 1;
     }
- }
+}
 
- .menu_entrees, .menu_plats, .menu_desserts {
+.menu_entrees, .menu_plats, .menu_desserts {
     animation-duration: 4s;
     animation-name: fadein;
     animation-fill-mode: backwards;
-  }
-  .menu_entrees {
+ }
+
+.menu_entrees {
     margin-top: 40px;
-  }
+}
   
-  .menu_plats {
+.menu_plats {
     margin-top: 40px;
     animation-delay: 1s;
-  }
+}
   
-  .menu_desserts {
+.menu_desserts {
     margin-top: 40px;
     animation-delay: 2s;
-  }
-  @keyframes fadein {
+}
+
+@keyframes fadein {
     from {
       opacity: 0;
     }
     to {
       opacity: 1;
     }
-  }
-  /*.menu:hover {
-    border-right: 3rem solid #99E2D0;
-  }
-  .menu i:hover
-  {
-      opacity: 1;
-  }*/
+}
 
-/*.menu_confirmation
-{
-    background-color: #99e2d0;
-    margin: -1rem -5rem -1rem 1rem;
-    width: 4rem;
+/* Animation confirmation de commande */
+.menu_command {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 2px 5px 10px 0 rgba(0,0,0,0.2);
+  }
+
+.menu_command_info {
+    padding: 10px;
+    white-space: nowrap;
+    color: gray;
+}
+
+.menu_command_info h3 {
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu_command_info P {
+    margin-top: 5px;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu_command_info_extra {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.menu_command_prix {
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition-duration: .5s;
+    font-weight: bold;
 }
-.menu_confirmation:hover .menu_icon
-{
-    margin-right: -1rem;
-}*/
 
-.menu_confirmation
-{
+.menu_confirmation {
     width: 0;
     height: 100%;
     margin-left: 10px;
     background-color: #99E2D0;
-    transition: width 2s;
+    transition: width 0.6s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -556,16 +582,17 @@ header .logo
     border-bottom-right-radius: 12px;
     color: white;
     overflow: hidden;
+    font-size: 1.5rem;
 }
 
-.menu:hover .menu_icon {
+.menu_command:hover .menu_confirmation {
     width: 50px;
-  }
-.menu:hover .menu_icon i {
-    animation: rotate 2s;
-  }
 }
 
+.menu_command:hover .menu_confirmation i {
+    animation: rotate 0.6s;
+}
+  
 @keyframes rotate {
     100% {
       transform: rotate(360deg);
@@ -573,7 +600,7 @@ header .logo
     0% {
       transform: rotate(190deg);
     }
-  }
+}
 
 /**** PIED DE PAGE ****/
 footer
@@ -650,13 +677,13 @@ footer a
     .container .text {
         left: 75%;
     }
-    .menu h4
+    .menu_command h3
+    {
+        font-size: 1rem;
+    }
+    .menu_command p
     {
         font-size: 0.9rem;
-    }
-    .menu p
-    {
-        font-size: 0.8rem;
         bottom: 10px;
     }
     .menu span
